@@ -375,7 +375,9 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                      <p><hr style="width: 97%;border-top: 1px solid rgb(0, 30, 255);">
                         <h4 style="line-height: 0;">Email</h4>
                         <input placeholder="Enter Email Address" type="text" id="email" name="email" required>
-            
+                        <h4>Username</h4><button class="usernameclick" onclick="generateRandomName()" required>Generate Username</button>
+                        <p id="result"></p>
+                        <br>
                       <h4>Password</h4>
                         <input placeholder="Create Password" type="password" id="password" name="password" required>
                         <div class="password-container">
@@ -392,6 +394,7 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                             </ul>
                         </p>
                         <br>
+                        
                         <h4>Name <b style="color: #575757;"
                             >(optional)</b></h4>
                         <input placeholder="First Name" type="fname" id="fname" name="fname" >
@@ -429,8 +432,7 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                             </script>
                             
                             <body>
-                                <button class="usernameclick" onclick="generateRandomName()" required>Generate Username</button>
-                                <p id="result"></p>
+                                
                                 <h6>By signing up, you agree to <a href="https://flowscripts.github.io/terms">Terms of Service</a></h6>
                                 <button type="submit" id="newButton" style="display:none;">Sign Up</button>
                             </body>
