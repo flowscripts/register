@@ -370,7 +370,7 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
             </style>
                 <div class="login-container">
                     <h2>Sign Up</h2>
-                   
+                   <h6>Welcome to FlowScripts, fill in the form below to create an account!</h6>
                     <form action="https://flowscripts.github.io/create-account" >
                      <p><hr style="width: 97%;border-top: 1px solid rgb(0, 30, 255);">
                         <h4 style="line-height: 0;">Email</h4>
@@ -379,13 +379,22 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                       <h4>Password</h4>
                         <input placeholder="Create Password" type="password" id="password" name="password" required>
                         <div class="password-container">
+                          
                 <br>
                             <button type="button" class="show-password" onclick="togglePassword()">Show</button>
+                            
                         </div>
-                      
+                        <h5>Tip: make your password</h5>
+                        <p><ul>
+                                <li>longer than 8 characters</li>
+                                <li>include numbers</li>
+      
+                            </ul>
+                        </p>
+                        <br>
                         <h4>Name <b style="color: #575757;"
                             >(optional)</b></h4>
-                        <input placeholder="First Name" type="password" id="password" name="password" >
+                        <input placeholder="First Name" type="fname" id="fname" name="fname" >
                             <h4>Gender <b style="color: #575757;"
                                 >(optional)</b></h4>
                            
@@ -397,8 +406,49 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                              
                                </h6>
                         
-                        
+                             <!--username-->
+                             <script>
+                                function generateRandomName() {
+                                    var words1 = ["Red", "Blue", "Orange", "Green", "Pink", "Purple", "Mint", "Teal", "Ruby", "Amber", "Gold","Emerald", "Diamond"];
+                                    var words2 = ["Galaxy", "Cool", "Pro","Kind","Curious","Clever","Intelligent","Friendly","Nice","Resilient"];
+                                    var words3 = ["Lion", "Tiger", "Bear", "Wolf", "Eagle","Cat","Owl","Puma","Fox","Dino","Deer","Kitten","Jellyfish","Snake"];
+                                    var words4 = ["", "", "", "","", "","", "", "", "","", "","", "","", "","", "","", "", "", "","", "", "","", "", "","", "", "","9","8","7","6","1","2","3","4","5"];
+                            
+                                    var randomIndex1 = Math.floor(Math.random() * words1.length);
+                                    var randomIndex2 = Math.floor(Math.random() * words2.length);
+                                    var randomIndex3 = Math.floor(Math.random() * words3.length);
+                                    var randomIndex4 = Math.floor(Math.random() * words4.length);
+                                    var combinedName = words1[randomIndex1] + words2[randomIndex2] + words3[randomIndex3] + words4[randomIndex4];
+                                    
+                                    document.getElementById("result").innerHTML = "Username: " + combinedName; 
+                            
+                                    // Show the new button
+                                    document.getElementById("newButton").style.display = "block";
+                                    
+                                }
+                            </script>
+                            
+                            <body>
+                                <button class="usernameclick" onclick="generateRandomName()" required>Generate Username</button>
+                                <p id="result"></p>
+                                <h6>By signing up, you agree to <a href="https://flowscripts.github.io/terms">Terms of Service</a></h6>
+                                <button type="submit" id="newButton" style="display:none;">Sign Up</button>
+                            </body>
+                            
+                                
+                                
+                 <hr>               
+                             
+<style>
+.usernameclick
+{background-color: rgb(232, 232, 232);
+color: black;}
 
+.usernameclick:hover
+{background-color: rgb(208, 208, 208);
+color: black;}
+
+</style>
 
 
          
@@ -448,7 +498,7 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
 
 
 
-                        <button type="submit">Sign Up</button></p>  
+                          
                     </form>
                   <p>Already have an account?  <A  href="https://flowscripts.github.io/login">Login</A></p>
             
