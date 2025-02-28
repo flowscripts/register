@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -376,46 +375,7 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                      <p><hr style="width: 97%;border-top: 1px solid rgb(0, 30, 255);">
                         <h4 style="line-height: 0;">Email</h4>
                         <input placeholder="Enter Email Address" type="email" id="email" name="email" required>
-                        <h4>Username</h4>
-                        
-
-                        <style>
-                          .error { color: red; }
-                        </style>
-                      </head>
-                      <body>
-                        <form>
-                         
-                          <input placeholder="Enter A Username" class="usernameinput" id="usernameblocker" type="text" pattern="[A-Za-z0-9]*">
-                          <div id="error-message" class="error"></div>
-                        </form>
-                        <script>
-                          const inappropriateWords = ["badword1", "badword2", "badword3", /* Add up to 100 inappropriate words here */];
-                      
-                          document.getElementById('usernameblocker').addEventListener('input', function() {
-                            const inputValue = this.value.toLowerCase();
-                            const errorMessage = document.getElementById('error-message');
-                            const regex = /^[A-Za-z0-9]*$/;
-                      
-                            if (!regex.test(inputValue)) {
-                              errorMessage.textContent = "Only letters and numbers are allowed!";
-                              this.value = this.value.replace(/[^A-Za-z0-9]/g, '');
-                              return;
-                            }
-                      
-                            for (let word of inappropriateWords) {
-                              if (inputValue.includes(word)) {
-                                errorMessage.textContent = "Inappropriate words are not allowed.";
-                                this.value = "";
-                                return;
-                              }
-                            }
-                            
-                            errorMessage.textContent = "";
-                          });
-                        </script>
-
-
+                        <h4>Username</h4><button class="usernameclick" onclick="generateRandomName()" required>Generate Username</button>
                         <p id="result"></p>
                         <br>
                       <h4>Password</h4>
@@ -450,11 +410,31 @@ background: linear-gradient(131deg, rgba(0,94,255,1)
                                </h6>
                         
                              <!--username-->
-                               
+                             <script>
+                                function generateRandomName() {
+                                    var words1 = ["Red", "Blue", "Orange", "Green", "Pink", "Purple", "Mint", "Teal", "Ruby", "Amber", "Gold","Emerald", "Diamond"];
+                                    var words2 = ["Galaxy", "Cool", "Pro","Kind","Curious","Clever","Intelligent","Friendly","Nice","Resilient"];
+                                    var words3 = ["Lion", "Tiger", "Bear", "Wolf", "Eagle","Cat","Owl","Puma","Fox","Dino","Deer","Kitten","Jellyfish","Snake"];
+                                    var words4 = ["", "", "", "","", "","", "", "", "","", "","", "","", "","", "","", "", "", "","", "", "","", "", "","", "", "","9","8","7","6","1","2","3","4","5"];
+                            
+                                    var randomIndex1 = Math.floor(Math.random() * words1.length);
+                                    var randomIndex2 = Math.floor(Math.random() * words2.length);
+                                    var randomIndex3 = Math.floor(Math.random() * words3.length);
+                                    var randomIndex4 = Math.floor(Math.random() * words4.length);
+                                    var combinedName = words1[randomIndex1] + words2[randomIndex2] + words3[randomIndex3] + words4[randomIndex4];
+                                    
+                                    document.getElementById("result").innerHTML = "Username: " + combinedName; 
+                            
+                                    // Show the new button
+                                    document.getElementById("newButton").style.display = "block";
+                                    
+                                }
+                            </script>
+                            
                             <body>
                                 
                                 <h6>By signing up, you agree to <a href="https://flowscripts.github.io/terms">Terms of Service</a></h6>
-                                <button type="submit" id="Signupfinish" >Sign Up</button>
+                                <button type="submit" id="newButton" style="display:none;">Sign Up</button>
                             </body>
                             
                                 
